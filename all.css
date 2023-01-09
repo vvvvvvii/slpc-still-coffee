@@ -1,0 +1,114 @@
+/* 
+primary: #3D342F
+secondary: #E06F25
+*/
+body {
+  color: #3d342f !important;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  .w-md-50 {
+    width: 50%;
+  }
+}
+
+.bg-primary {
+  background: #3d342f !important;
+}
+.btn-primary {
+  border: 1px solid #3d342f;
+  background: #3d342f !important;
+}
+.btn-primary:hover {
+  border: 1px solid #3d342f;
+  background: #4d443e !important;
+}
+
+.text-promo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #d62424;
+}
+.text-line-through {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.navbar {
+  padding: 0 2rem;
+}
+.nav-item {
+  padding: 0.5rem;
+}
+.navbar-nav .active {
+  background: #4d443e;
+}
+.nav-link {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: #e06f25;
+}
+.nav-link:hover {
+  color: #f99348 !important;
+}
+
+.kv {
+  height: 550px;
+  background-image: url(img/daniel-jerico-rEYaMYYVePw-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.kv-title {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 3.5rem;
+}
+.kv-subtitle {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  font-size: 1.75rem;
+}
+
+.card {
+  border: none;
+  background: transparent;
+  align-items: center;
+}
+.card-img-top {
+  width: 75%;
+  border-radius: 50%;
+  border: 6px solid #4d443e;
+}
+.card-body {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.wrapper {
+  position: absolute;
+  top: 78px;
+}
+.section {
+  padding: 4rem 5rem;
+}
+.section-title {
+  font-size: 2.5rem;
+  color: #e06f25;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.feature-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
