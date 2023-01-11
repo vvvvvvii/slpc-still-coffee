@@ -27,6 +27,13 @@ ul {
   .ms-md-6 {
     margin-left: 4rem !important;
   }
+  .pb-md-4 {
+    padding-bottom: 4rem;
+  }
+  .px-md-5 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 .intro-section {
@@ -378,6 +385,10 @@ ul {
   border-radius: 15%;
 }
 @media (min-width: 768px) {
+  .cart {
+    margin: 0 auto;
+    border-radius: 0.5rem;
+  }
   .cart-item {
     display: flex;
     justify-content: space-between;
@@ -390,10 +401,6 @@ ul {
 }
 
 @media (min-width: 992px) {
-  .cart {
-    margin: 0 auto;
-    border-radius: 0.5rem;
-  }
   .cart-wrapper {
     padding: 2rem 1.5rem;
     width: 75%;
