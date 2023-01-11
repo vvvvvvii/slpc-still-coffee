@@ -306,6 +306,7 @@
             <div class="ms-md-3 w-md-75">
               <input type="text" id="customerName" class="cart-input">
               <span class="cart-input-border"></span>
+              <p id="errorInfoName" class="d-none invalid-feedback">此為必填</p>
             </div>
           </div>
           <div class="d-md-flex mb-4">
@@ -316,15 +317,19 @@
               <input type="text" id="contactInfo" class="cart-input">
               <span class="cart-input-border mb-2"></span>
               <p class="text-warning fs-xs mb-0">若您未如期取貨，我們將用此方式聯繫您</p>
+              <p id="errorInfoContact" class="d-none invalid-feedback">此為必填</p>
             </div>
           </div>
           <div class="d-md-flex mb-4">
             <label class="w-md-25 mb-md-0 mb-2">取貨日期：</label>
-            <select class="cart-select ms-md-3 w-md-75 text-center">
-              <option selected disabled>選擇日期</option>
-              <option value="0204">2 月 5 日（日）</option>
-              <option value="0211">2 月 11 日（六）</option>
-            </select>
+            <div class="ms-md-3 w-md-75 ">
+              <select class="cart-select w-100 text-center" id="pickDate">
+                <option selected disabled>選擇日期</option>
+                <option value="0205">2 月 5 日（日）</option>
+                <option value="0211">2 月 11 日（六）</option>
+              </select>
+              <p id="errorInfoDate" class="d-none invalid-feedback">此為必填</p>
+            </div>
           </div>
           <div class="mb-5">
             <p class="mb-3">注意事項：</p>
@@ -370,7 +375,7 @@
             </span>
           </p>
           <div class="text-center">
-            <button type="button" class="btn btn-primary w-75">
+            <button type="button" id="submitBtn" class="btn btn-primary w-75" disabled>
               送出訂單
             </button>
           </div>
@@ -387,6 +392,8 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="all.js"></script>
 </body>
 

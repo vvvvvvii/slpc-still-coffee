@@ -38,6 +38,9 @@ ul {
   border: 1px solid #3d342f;
   background: #4d443e !important;
 }
+.btn:disabled {
+  border: 1px solid #3d342f;
+}
 
 .text-primary {
   color: #3d342f !important;
@@ -48,6 +51,10 @@ ul {
 .text-promo {
   font-weight: bold;
   font-size: 1.25rem;
+  color: #d62424;
+}
+.invalid-feedback {
+  display: block;
   color: #d62424;
 }
 .text-line-through {
