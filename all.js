@@ -53,6 +53,10 @@ function calcPrice() {
   totalPrice.innerHTML = total;
 }
 
+// plugins
+
+AOS.init();
+
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 2.5,
   spaceBetween: 30,
