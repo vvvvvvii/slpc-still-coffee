@@ -24,6 +24,52 @@ ul {
   .w-md-75 {
     width: 75%;
   }
+  .ms-md-6 {
+    margin-left: 4rem !important;
+  }
+}
+
+.intro-section {
+  padding: 1rem 1.5rem;
+  background: #3d342f;
+  color: #f5eabf;
+}
+.intro-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f5eabf;
+}
+.intro-body {
+  padding: 1rem 1.75rem;
+}
+
+@media (min-width: 540px) {
+  .intro-section {
+    padding: 2rem;
+  }
+  .intro-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  .intro-body {
+    padding: 1rem 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .intro-section {
+    padding: 2rem 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .intro-section {
+    padding: 3rem 5rem;
+  }
+  .intro-header {
+    margin-bottom: 3rem;
+  }
+  .intro-body {
+    padding: 1.5rem 4rem;
+  }
 }
 
 .bg-primary {
