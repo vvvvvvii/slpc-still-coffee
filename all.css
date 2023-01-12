@@ -176,7 +176,8 @@ ul {
 .kv-title,
 .kv-logo {
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .kv-title {
   background-image: url(img/banner-text.png);
@@ -296,19 +297,13 @@ ul {
 .box {
   width: 70vw;
   height: 70vw;
-  color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.box-inner {
-  width: 66vw;
-  height: 66vw;
-  border: 1px dashed #eee;
+  background-image: url("./img/coffee-type-bg.jpg");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #eee;
 }
 
 @media (min-width: 540px) {
@@ -316,19 +311,11 @@ ul {
     width: 60vw;
     height: 60vw;
   }
-  .box-inner {
-    width: 56vw;
-    height: 56vw;
-  }
 }
 @media (min-width: 768px) {
   .box {
     width: 40vw;
     height: 40vw;
-  }
-  .box-inner {
-    width: 36vw;
-    height: 36vw;
   }
 }
 @media (min-width: 992px) {
@@ -336,17 +323,6 @@ ul {
     width: 30vw;
     height: 30vw;
   }
-  .box-inner {
-    width: 26vw;
-    height: 26vw;
-  }
-}
-
-.bg-red {
-  background: linear-gradient(#fc2b2b, #6b1212);
-}
-.bg-blue {
-  background: linear-gradient(#2b4bfd, #12186b);
 }
 
 .type-img {
@@ -426,7 +402,7 @@ ul {
 }
 .cart-input {
   width: 100%;
-  padding: 0.25rem;
+  padding: 0.25rem 0.75rem;
 }
 .cart-input:focus {
   outline: none;

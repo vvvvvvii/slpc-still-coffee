@@ -129,7 +129,9 @@ function sendData(data) {
     contentType: "application/json",
     dataType: "jsonp",
     complete: function () {
-      alert("我們已收到您的訂單");
+      alert(
+        "謝謝您的訂購！我們已收到您的訂單。願神與您同在，賜給您真實的平安！"
+      );
     },
   });
 }
@@ -140,6 +142,7 @@ $(function () {
     responseContact = $("#contactInfo").val();
     responseDate = $("#pickDate").val() || "";
     booking = organizeBooking();
+    couponAmount = $("#couponAmount").val() || "";
 
     const readyToSend = checkBlankInput(
       responseName,
@@ -154,6 +157,7 @@ $(function () {
       "entry.643988750": responseContact,
       "entry.1329456624": responseDate,
       "entry.927790745": booking,
+      "entry.898565931": couponAmount,
     };
 
     if (readyToSend) {
