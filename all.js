@@ -50,7 +50,7 @@ function calcPrice() {
     (Number(yirgacheffeLgNum.innerHTML) + Number(costaricaLgNum.innerHTML)) *
       600 +
     (Number(yirgacheffeMdNum.innerHTML) + Number(costaricaMdNum.innerHTML)) *
-      360 +
+      350 +
     (Number(yirgacheffeSmNum.innerHTML) + Number(costaricaSmNum.innerHTML)) *
       150;
   totalPrice.innerHTML = total;
