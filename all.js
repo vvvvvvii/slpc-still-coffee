@@ -137,8 +137,26 @@ function sendData(data) {
       alert(
         "謝謝您的訂購！我們已收到您的訂單。願神與您同在，賜給您真實的平安！"
       );
+      resetForm();
+      window.scrollTo(0, 0);
     },
   });
+}
+function resetForm() {
+  yirgacheffeLgNum.innerHTML = "0";
+  yirgacheffeMdNum.innerHTML = "0";
+  yirgacheffeSmNum.innerHTML = "0";
+  costaricaLgNum.innerHTML = "0";
+  costaricaMdNum.innerHTML = "0";
+  costaricaSmNum.innerHTML = "0";
+  totalPrice.innerHTML = "0";
+  suggestCouponNum.innerHTML = "0";
+
+  $("#suggestCouponHint").addClass("d-none");
+  $("#customerName").val("");
+  $("#contactInfo").val("");
+  $("#pickDate").val("");
+  $("#couponAmount").val("");
 }
 
 $(function () {
@@ -174,24 +192,3 @@ $(function () {
 // plugins
 
 AOS.init();
-
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 2.5,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1.5,
-      spaceBetween: 30,
-    },
-    540: {
-      slidesPerView: 2.5,
-    },
-    768: {
-      slidesPerView: 3.5,
-    },
-  },
-});
