@@ -12,6 +12,7 @@ const minusBtns = document.querySelectorAll(".minus-btn");
 const addBtns = document.querySelectorAll(".add-btn");
 
 const totalPrice = document.querySelector("#totalPrice");
+const suggestCouponNum = document.querySelector("#suggestCouponNum");
 
 function handleNum(elemName, action) {
   let elem;
@@ -52,9 +53,13 @@ function calcPrice() {
     (Number(yirgacheffeSmNum.innerHTML) + Number(costaricaSmNum.innerHTML)) *
       150;
   totalPrice.innerHTML = total;
+  suggestCouponNum.innerHTML = Math.round(total / 200);
+
   if (total !== 0) {
     $("#submitBtn").prop("disabled", false);
+    $("#suggestCouponHint").removeClass("d-none");
   } else {
+    $("#suggestCouponHint").addClass("d-none");
     $("#submitBtn").prop("disabled", true);
   }
 }
