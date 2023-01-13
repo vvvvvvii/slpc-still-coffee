@@ -11,6 +11,7 @@ const costaricaSmNum = document.querySelector("#costaricaSmNum");
 const minusBtns = document.querySelectorAll(".minus-btn");
 const addBtns = document.querySelectorAll(".add-btn");
 
+const alertMsg = document.querySelector("#alertMsg");
 const totalPrice = document.querySelector("#totalPrice");
 const suggestCouponNum = document.querySelector("#suggestCouponNum");
 
@@ -134,13 +135,31 @@ function sendData(data) {
     contentType: "application/json",
     dataType: "jsonp",
     complete: function () {
-      alert(
-        "謝謝您的訂購！我們已收到您的訂單。願神與您同在，賜給您真實的平安！"
-      );
+      handleAlert();
       resetForm();
       window.scrollTo(0, 0);
     },
   });
+}
+function handleAlert() {
+  // alertMsg
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = `
+    <div class="alert alert-success w-50" role="alert">
+      <div class="d-flex justify-content-between align-items-center">
+        <h4 class="alert-heading">
+          <i class="bi bi-send-check-fill me-1"></i>
+          謝謝您的訂購！
+        </h4>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <hr>
+      <p>
+        我們已收到您的訂單。願神與您同在，賜給您真實的平安！
+      </p>
+    </div>
+  `;
+  alertMsg.append(wrapper);
 }
 function resetForm() {
   yirgacheffeLgNum.innerHTML = "0";
