@@ -200,6 +200,12 @@ $(function () {
       "entry.1329456624": responseDate,
       "entry.927790745": booking,
       "entry.898565931": couponAmount,
+      "entry.955169935": yirgacheffeLgNum.innerHTML,
+      "entry.1098334062": yirgacheffeMdNum.innerHTML,
+      "entry.63299201": yirgacheffeSmNum.innerHTML,
+      "entry.709186585": costaricaLgNum.innerHTML,
+      "entry.1040293675": costaricaMdNum.innerHTML,
+      "entry.780868373": costaricaSmNum.innerHTML,
     };
 
     if (readyToSend) {
