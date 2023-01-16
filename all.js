@@ -11,6 +11,7 @@ const costaricaSmNum = document.querySelector("#costaricaSmNum");
 const minusBtns = document.querySelectorAll(".minus-btn");
 const addBtns = document.querySelectorAll(".add-btn");
 
+const alertSuccessMsg = document.querySelector("#alertSuccessMsg");
 const alertMsg = document.querySelector("#alertMsg");
 const totalPrice = document.querySelector("#totalPrice");
 const suggestCouponNum = document.querySelector("#suggestCouponNum");
@@ -54,7 +55,7 @@ function calcPrice() {
     (Number(yirgacheffeSmNum.innerHTML) + Number(costaricaSmNum.innerHTML)) *
       150;
   totalPrice.innerHTML = total;
-  suggestCouponNum.innerHTML = Math.round(total / 200);
+  suggestCouponNum.innerHTML = Math.ceil(total / 200);
 
   if (total !== 0) {
     $("#submitBtn").prop("disabled", false);
@@ -115,7 +116,7 @@ function checkBlankInput(name, contact, date) {
   ];
 
   if (checkArr.some((item) => item.name.length === 0)) {
-    alert("有東西沒填到唷！");
+    handleAlert("有東西沒填到唷！");
   }
   checkArr.forEach((item) => {
     if (item.name.length === 0) {
@@ -135,31 +136,46 @@ function sendData(data) {
     contentType: "application/json",
     dataType: "jsonp",
     complete: function () {
-      handleAlert();
+      handleAlert("success");
       resetForm();
       window.scrollTo(0, 0);
     },
   });
 }
-function handleAlert() {
-  // alertMsg
+function handleAlert(msg) {
   const wrapper = document.createElement("div");
-  wrapper.innerHTML = `
-    <div class="alert alert-success w-50" role="alert">
-      <div class="d-flex justify-content-between align-items-center">
-        <h4 class="alert-heading">
-          <i class="bi bi-send-check-fill me-1"></i>
-          謝謝您的訂購！
-        </h4>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  if (msg === "success") {
+    wrapper.innerHTML = `
+      <div class="alert alert-success w-50" role="alert">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="alert-heading">
+            <i class="bi bi-send-check-fill me-1"></i>
+            謝謝您的訂購！
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <hr>
+        <p>
+          我們已收到您的訂單。願神與您同在，賜給您真實的平安！
+        </p>
       </div>
-      <hr>
-      <p>
-        我們已收到您的訂單。願神與您同在，賜給您真實的平安！
-      </p>
-    </div>
-  `;
-  alertMsg.append(wrapper);
+    `;
+    alertSuccessMsg.append(wrapper);
+  } else {
+    wrapper.innerHTML = `
+      <div class="alert alert-warning w-50" role="alert">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="alert-heading">
+            <i class="bi bi-send-check-fill me-1"></i>
+            ${msg}
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <hr>
+      </div>
+    `;
+    alertMsg.append(wrapper);
+  }
 }
 function resetForm() {
   yirgacheffeLgNum.innerHTML = "0";
@@ -176,10 +192,15 @@ function resetForm() {
   $("#contactInfo").val("");
   $("#pickDate").val("");
   $("#couponAmount").val("");
+  $("#submitBtn").html("送出訂單");
+  $("#submitBtn").prop("disabled", false);
 }
 
 $(function () {
   $("#submitBtn").on("click", function () {
+    $("#submitBtn").html("LOADING...");
+    $("#submitBtn").prop("disabled", true);
+
     responseName = $("#customerName").val();
     responseContact = $("#contactInfo").val();
     responseDate = $("#pickDate").val() || "";
@@ -210,6 +231,9 @@ $(function () {
 
     if (readyToSend) {
       sendData(data);
+    } else {
+      $("#submitBtn").html("送出訂單");
+      $("#submitBtn").prop("disabled", false);
     }
   });
 });
