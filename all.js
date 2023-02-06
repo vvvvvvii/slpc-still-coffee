@@ -5,7 +5,7 @@ const yirgacheffeMdNum = document.querySelector("#yirgacheffeMdNum");
 const yirgacheffeSmNum = document.querySelector("#yirgacheffeSmNum");
 
 const costaricaLgNum = document.querySelector("#costaricaLgNum");
-const costaricaMdNum = document.querySelector("#costaricaMdNum");
+// const costaricaMdNum = document.querySelector("#costaricaMdNum");
 const costaricaSmNum = document.querySelector("#costaricaSmNum");
 
 const minusBtns = document.querySelectorAll(".minus-btn");
@@ -31,9 +31,9 @@ function handleNum(elemName, action) {
     case "costaricaLgNum":
       elem = costaricaLgNum;
       break;
-    case "costaricaMdNum":
-      elem = costaricaMdNum;
-      break;
+    // case "costaricaMdNum":
+    //   elem = costaricaMdNum;
+    //   break;
     case "costaricaSmNum":
       elem = costaricaSmNum;
       break;
@@ -50,8 +50,7 @@ function calcPrice() {
   const total =
     (Number(yirgacheffeLgNum.innerHTML) + Number(costaricaLgNum.innerHTML)) *
       600 +
-    (Number(yirgacheffeMdNum.innerHTML) + Number(costaricaMdNum.innerHTML)) *
-      350 +
+    Number(yirgacheffeMdNum.innerHTML) * 350 +
     (Number(yirgacheffeSmNum.innerHTML) + Number(costaricaSmNum.innerHTML)) *
       150;
   totalPrice.innerHTML = total;
@@ -87,11 +86,11 @@ function organizeBooking() {
       size: "量販盒",
       num: costaricaLgNum.innerHTML,
     },
-    {
-      type: "哥斯大黎加",
-      size: "精緻禮盒",
-      num: costaricaMdNum.innerHTML,
-    },
+    // {
+    //   type: "哥斯大黎加",
+    //   size: "精緻禮盒",
+    //   num: costaricaMdNum.innerHTML,
+    // },
     {
       type: "哥斯大黎加",
       size: "淺嚐輕量",
@@ -182,7 +181,7 @@ function resetForm() {
   yirgacheffeMdNum.innerHTML = "0";
   yirgacheffeSmNum.innerHTML = "0";
   costaricaLgNum.innerHTML = "0";
-  costaricaMdNum.innerHTML = "0";
+  // costaricaMdNum.innerHTML = "0";
   costaricaSmNum.innerHTML = "0";
   totalPrice.innerHTML = "0";
   suggestCouponNum.innerHTML = "0";
@@ -225,7 +224,8 @@ $(function () {
       "entry.1098334062": yirgacheffeMdNum.innerHTML,
       "entry.63299201": yirgacheffeSmNum.innerHTML,
       "entry.709186585": costaricaLgNum.innerHTML,
-      "entry.1040293675": costaricaMdNum.innerHTML,
+      // "entry.1040293675": costaricaMdNum.innerHTML,
+      "entry.1040293675": 0,
       "entry.780868373": costaricaSmNum.innerHTML,
     };
 
